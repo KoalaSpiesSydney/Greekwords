@@ -1,0 +1,669 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Word stress on Greek origin academic vocabulary</title>
+  <meta name="description" content="Word stress: in Greek-origin Academic Words. Listen and repeat these words, then practise in sentences." />
+
+  <style>
+    :root{
+      --bg:#f5f5f5;
+      --ink:#1e1e1e;
+      --muted:#666;
+      --accent:#ff7a1a;
+      --line:#ccc;
+
+      --charcoal:#1e1e1e;
+      --max: 1000px;
+
+      /* shared width (image + notes + dividers + practice) */
+      --content: min(720px, 100%);
+
+  --lesson-width: min(360px, 90%);
+}
+
+    
+
+    *{ box-sizing:border-box; margin:0; padding:0; }
+    img{ max-width:100%; height:auto; display:block; }
+    html, body{ background: var(--bg); }
+
+    body{
+      font-family: "Libre Baskerville", "Times New Roman", Times, serif;
+      color: var(--ink);
+      line-height: 1.75;
+    }
+
+    /* =========================
+       HEADER (unchanged)
+       ========================= */
+    header{
+      position:sticky;
+      top:0;
+      z-index:50;
+      background:var(--charcoal);
+      color:#fff;
+      border-bottom:1px solid rgba(255,255,255,.12);
+    }
+    .topbar{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:12px 16px;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+    }
+    .brand{
+      display:flex;
+      flex-direction:column;
+      gap:2px;
+      min-width:0;
+    }
+    .brand strong{
+      font-size:15px;
+      letter-spacing:.02em;
+      color:#fff;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+    .brand span{
+      font-size:12px;
+      color:rgba(255,255,255,.75);
+      letter-spacing:.02em;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+    .actions{
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+    .nav-link{
+      color:#fff;
+      font-weight:600;
+      text-decoration:none;
+      padding:0;
+      border:none;
+      background:none;
+    }
+    .nav-link:hover{ text-decoration:underline; }
+    .nav-link.back{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+    }
+    @media (min-width: 700px){
+      .topbar{
+        flex-direction:row;
+        align-items:center;
+        justify-content:space-between;
+        padding: 12px clamp(16px, 4vw, 28px);
+        gap:12px;
+      }
+      .brand strong{ font-size: clamp(14px, 2.2vw, 16px); }
+      .actions{ justify-content:flex-end; }
+    }
+
+    /* =========================
+       LAYOUT
+       ========================= */
+    main{
+      max-width: 900px;
+      margin: 1rem auto;
+      padding: 0 1rem 2.25rem;
+    }
+
+    section{
+      background: transparent;
+      padding: 0;
+      margin: 1.5rem 0;
+    }
+
+    h1, h2, h3{
+      font-family: "Libre Baskerville", "Times New Roman", serif;
+      font-weight: 700;
+      letter-spacing: 0;
+      color:#333;
+      text-align:center;
+    }
+
+    p{ margin: .7rem 0; }
+    .center{ text-align:center; }
+
+    figure{ margin: 1rem 0; }
+
+    /* shared width blocks */
+    .content-block{
+      width: var(--content);
+      margin-left:auto;
+      margin-right:auto;
+    }
+    figure img.lesson-img{
+  width: var(--lesson-width);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.pill-note strong{
+  font-weight: 700;
+  letter-spacing: .03em;
+}
+
+.pill-note{
+  width: var(--lesson-width);
+  margin-left: auto;
+  margin-right: auto;
+
+  font-size: 1.1rem;
+  line-height: 1.75;
+
+  background: transparent;
+  border: none;
+  padding: 0;
+  color: var(--muted);
+      background: transparent;
+      border: 0;
+      text-align:left;
+    }
+
+    audio{
+      width:100%;
+      max-width:650px;
+      margin-top:.3rem;
+      display:block;
+      margin-left:auto;
+      margin-right:auto;
+    }
+
+    .divider{
+      border-top:1px solid var(--line);
+      margin: 1.25rem auto;
+      width: var(--content);
+    }
+
+    /* =========================
+       PRACTICE 1 (Gap fill)
+       ========================= */
+    .gapfill{
+      width: var(--content);
+      margin: 0 auto;
+    }
+
+    .gapfill-sentence{
+      text-align:left;
+      margin: .75rem auto 0;
+    }
+
+    .gap-input{
+      width: min(180px, 42vw);
+      padding: .55rem .7rem;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      font: inherit;
+      text-align: center;
+      outline:none;
+      background:#fff;
+      margin: .25rem .2rem;
+    }
+    .gap-input:focus{
+      border-color: rgba(255,122,26,.65);
+      box-shadow: 0 0 0 3px rgba(255,122,26,.14);
+    }
+    .gap-input.ok{
+      border-color: rgba(29,185,84,.55);
+      box-shadow: 0 0 0 3px rgba(29,185,84,.12);
+    }
+    .gap-input.err{
+      border-color: rgba(231,76,60,.55);
+      box-shadow: 0 0 0 3px rgba(231,76,60,.12);
+    }
+
+    .gap-actions{
+      display:flex;
+      gap:.6rem;
+      flex-wrap:wrap;
+      justify-content:flex-start;
+      margin-top: .9rem;
+    }
+
+    /* “less AI” buttons: text-like, quiet */
+    .btn{
+      appearance:none;
+      background: transparent;
+      border: 1px solid var(--line);
+      color: var(--ink);
+      border-radius: 10px;
+
+      padding: .55rem .95rem;
+      font: inherit;
+      font-size: 0.98rem;
+      cursor:pointer;
+    }
+    .btn:hover{ background: rgba(0,0,0,.03); }
+    .btn:active{ transform: translateY(1px); }
+    .btn:focus-visible{
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(255,122,26,.14);
+      border-color: rgba(255,122,26,.55);
+    }
+
+    .feedback{
+      margin-top: .9rem;
+      padding: .75rem .9rem;
+      border-radius: 12px;
+      border:1px solid var(--line);
+      background:#fff;
+    }
+    .feedback.ok{
+      border-color: rgba(29,185,84,.35);
+      background: rgba(29,185,84,.08);
+    }
+    .feedback.err{
+      border-color: rgba(231,76,60,.35);
+      background: rgba(231,76,60,.08);
+    }
+    .feedback-title{
+      font-weight: 700;
+      margin-bottom:.25rem;
+    }
+    .small{ color: var(--muted); font-size: .95rem; }
+
+    /* Word bank pill dropdown */
+    .pill-drop{
+      margin: .75rem 0 0;
+      width: 100%;
+    }
+    .pill-drop > summary{ list-style:none; }
+    .pill-drop > summary::-webkit-details-marker{ display:none; }
+
+    .pill-drop__summary{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:.75rem;
+
+      padding:.55rem .9rem;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:#fff;
+      cursor:pointer;
+      user-select:none;
+      font-weight:700;
+    }
+    .pill-drop__chev{ transition: transform .15s ease; }
+    .pill-drop[open] .pill-drop__chev{ transform: rotate(180deg); }
+
+    .pill-drop__panel{
+      margin-top:.65rem;
+      display:flex;
+      flex-wrap:wrap;
+      gap:.5rem;
+      justify-content:flex-start;
+      padding:.85rem;
+      border:1px solid var(--line);
+      border-radius:14px;
+      background:#fff;
+    }
+
+    .pill{
+      display:inline-block;
+      padding:.25rem .6rem;
+      border-radius:999px;
+      font-size:.92rem;
+      border:1px solid var(--line);
+      background:#fff;
+      font-weight:600;
+      user-select:none;
+    }
+
+    /* =========================
+       VIDEO (responsive)
+       ========================= */
+
+    
+.video-wrap{
+  width: var(--content);
+  margin: 1.25rem auto;
+  aspect-ratio: 16 / 9;
+  position: relative;
+  overflow: hidden;      /* important */
+  border-radius: 12px;   /* matches iframe */
+}
+
+.video-wrap iframe{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  border:0;
+}
+
+    /* =========================
+       LINKS + FOOTER
+       ========================= */
+    a{
+      color: var(--accent);
+      text-decoration:none;
+      font-weight:600;
+    }
+    a:hover{ text-decoration:underline; }
+
+    footer{
+      text-align:center;
+      color: var(--muted);
+      border-top:1px solid var(--line);
+      padding: 1rem;
+      font-size: .9rem;
+      background: #fff;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="topbar">
+      <div class="brand">
+        <strong>Modern English Australia</strong>
+        <span>Koala Spies Sydney</span>
+      </div>
+
+      <nav class="actions" aria-label="Page navigation">
+        <a class="nav-link back" href="index.html">← Back to Tests &amp; Practices</a>
+        <a class="nav-link" href="https://koalaspiessydney.github.io/ModernEnglishAU/">Home</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- =========================
+         LESSON
+         ========================= -->
+    <section>
+      <h2>Word stress: in Greek-origin Academic Words</h2>
+
+      <p>
+        Word stress: English syllables are weak or strong. The weak sounds you can’t hear clearly;
+        the strong sounds must be clear to understand the word. Listen and repeat these words,
+        and then the words in sentences.
+      </p>
+
+      <figure>
+        <img class="lesson-img" src="https://ieltspteaustralianexaminertutor.com/wp-content/uploads/2025/03/pronunciaton.png" alt="Pronunciation guide">
+      </figure>
+
+      <div class="pill-note">
+        biology = bi-<strong>O</strong>-lo-gy<br>
+        biologist = bi-<strong>O</strong>-lo-gist<br>
+        biological = bi-o-<strong>LO</strong>-gi-cal
+      </div>
+
+      <figure>
+        <audio controls src="https://ieltspteaustralianexaminertutor.com/wp-content/uploads/2025/03/0001-block.mp3"></audio>
+      </figure>
+
+      <p>Biology is an essential part of the high school curriculum.</p>
+      <figure>
+        <audio controls src="https://ieltspteaustralianexaminertutor.com/wp-content/uploads/2025/03/subblock_biology-is-an-essential-part-o.mp3"></audio>
+      </figure>
+
+      <p>The biologist have discovered thousands of new species.</p>
+      <figure>
+        <audio controls src="https://ieltspteaustralianexaminertutor.com/wp-content/uploads/2025/03/subblock_the-biologist-have-discovered.mp3"></audio>
+      </figure>
+
+      <p>Scientists are conducting biological research to better understand how ecosystems are affected by climate change.</p>
+      <figure>
+        <audio controls src="https://ieltspteaustralianexaminertutor.com/wp-content/uploads/2025/03/subblock_scientists-are-conducting-biol.mp3"></audio>
+      </figure>
+
+      <div class="pill-note">
+        <strong>Notice:</strong> the <strong>E-co-systems</strong> stress (like many Greek-origin academic words) is third from the end.
+      </div>
+
+      <div class="divider"></div>
+
+      <figure>
+        <img class="lesson-img" src="https://ieltspteaustralianexaminertutor.com/wp-content/uploads/2025/03/pronunciaton.png" alt="Pronunciation guide">
+      </figure>
+
+      <div class="pill-note">
+        psychology = psy-<strong>CHO</strong>-lo-gy<br>
+        psychologist = psy-<strong>CHO</strong>-lo-gist<br>
+        psychological = psy-cho-<strong>LO</strong>-gi-cal
+      </div>
+
+      <figure>
+        <audio controls src="https://ieltspteaustralianexaminertutor.com/wp-content/uploads/2025/03/subblock_psychology-psychologist-psycho.mp3"></audio>
+      </figure>
+
+      <p>Psychology helps us understand the complexities of human behavior and mental processes.</p>
+      <figure>
+        <audio controls src="https://ieltspteaustralianexaminertutor.com/wp-content/uploads/2025/03/subblock_psychology-helps-us-understand.mp3"></audio>
+      </figure>
+
+      <p>A skilled psychologist can help individuals navigate challenges.</p>
+      <figure>
+        <audio controls src="https://ieltspteaustralianexaminertutor.com/wp-content/uploads/2025/03/subblock_a-skilled-psychologist-can-hel.mp3"></audio>
+      </figure>
+
+      <p>The study revealed significant psychological effects on individuals experiencing prolonged stress.</p>
+      <figure>
+        <audio controls src="https://ieltspteaustralianexaminertutor.com/wp-content/uploads/2025/03/subblock_the-study-revealed-significant.mp3"></audio>
+      </figure>
+
+      <div class="pill-note">
+        <strong>Notice:</strong> Greek spelling/pronunciation: <strong>psy</strong> = “sigh”, <strong>ch</strong> = “k”.
+        <br>
+        So the words sound like: <strong>sy-KO-lojy · sy-KO-lo-jist · sy-ko-LOJ-i-cal</strong>
+      </div>
+
+      <p>Listen again.</p>
+      <figure>
+        <audio controls src="https://ieltspteaustralianexaminertutor.com/wp-content/uploads/2025/03/subblock_psychology-psychologist-psycho-1.mp3"></audio>
+      </figure>
+
+      <div class="divider"></div>
+    </section>
+
+    <!-- =========================
+         PRACTICE 1
+         ========================= -->
+    <section>
+      <h2>PRACTICE 1 · Gap Fill</h2>
+
+      <div class="gapfill" id="practice1">
+        <p class="gapfill-sentence">
+          The integration of
+          <input class="gap-input" type="text" data-gap="g1" placeholder="(1)" aria-label="Gap 1">
+          care into modern
+          <input class="gap-input" type="text" data-gap="g2" placeholder="(2)" aria-label="Gap 2">
+          is revolutionizing healthcare spaces, emphasizing designs that nurture mental and
+          <input class="gap-input" type="text" data-gap="g3" placeholder="(3)" aria-label="Gap 3">
+          well-being. By blending these principles, healthcare spaces are becoming more holistic,
+          addressing both
+          <input class="gap-input" type="text" data-gap="g4" placeholder="(4)" aria-label="Gap 4">
+          and mental health for comprehensive care.
+        </p>
+
+        <details class="pill-drop">
+          <summary class="pill-drop__summary">
+            <span>Word bank</span>
+            <span class="pill-drop__chev" aria-hidden="true">▾</span>
+          </summary>
+
+          <div class="pill-drop__panel" role="group" aria-label="Word bank options">
+            <span class="pill">psychiatry</span>
+            <span class="pill">psychiatrist</span>
+            <span class="pill">psychiatric</span>
+
+            <span class="pill">architecture</span>
+            <span class="pill">architect</span>
+            <span class="pill">architectural</span>
+
+            <span class="pill">physiology</span>
+            <span class="pill">physiologist</span>
+            <span class="pill">physiological</span>
+
+            <span class="pill">physics</span>
+            <span class="pill">physical</span>
+          </div>
+        </details>
+
+        <div class="gap-actions">
+          <button class="btn" type="button" id="p1Submit">Submit &amp; Score</button>
+          <button class="btn" type="button" id="p1Show">Check Answers</button>
+          <button class="btn" type="button" id="p1Reset">Reset</button>
+        </div>
+
+        <div class="feedback" id="p1Feedback" hidden></div>
+
+        <p style="margin-top:1rem;">Check your answer through audio:</p>
+        <figure>
+          <audio controls src="https://ieltspteaustralianexaminertutor.com/wp-content/uploads/2025/03/0008-block1.mp3"></audio>
+        </figure>
+
+        <p>
+          <a href="https://ieltspteaustralianexaminertutor.com/answersword-stress-in-greek-origin-academic-words/">
+            Check answers (full page)
+          </a>
+        </p>
+      </div>
+
+      <div class="divider"></div>
+    </section>
+
+    <!-- =========================
+         PRACTICE 2 (Video)
+         ========================= -->
+    <section>
+      <h2>Practice 2: More Greek Words in English</h2>
+
+      <div class="content-block">
+        <p>
+          Grab a pen and paper and take notes. Think about how Greek origins affect spelling and pronunciation in English.
+          For instance, <strong>ch</strong> is pronounced like <strong>k</strong> (chemist), and <strong>eu</strong> is pronounced like “you” (Europe).
+        </p>
+      </div>
+
+     
+     <div style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden;">
+  <iframe 
+      src="https://www.youtube.com/embed/ebzg_X0-NjI"
+      style="position:absolute; top:0; left:0; width:100%; height:100%;"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen>
+  </iframe>
+</div>
+
+
+  </main>
+
+  <footer>© Koala Spies Sydney · Modern English Australia · All Rights Reserved</footer>
+
+  <script>
+    const PRACTICE1_KEY = {
+      g1: ["psychiatric"],
+      g2: ["architecture"],
+      g3: ["physical"],
+      g4: ["physiology"]
+    };
+
+    function normalizeGF(str){
+      return (str || "")
+        .toLowerCase()
+        .trim()
+        .replace(/[’']/g,"'")
+        .replace(/\s+/g," ");
+    }
+
+    function isCorrectGap(user, accepted){
+      const u = normalizeGF(user);
+      if(Array.isArray(accepted)){
+        return accepted.map(normalizeGF).includes(u);
+      }
+      return u === normalizeGF(accepted);
+    }
+
+    function setState(input, state){
+      input.classList.remove("ok","err");
+      if(state) input.classList.add(state);
+    }
+
+    (function initPractice1(){
+      const root = document.getElementById("practice1");
+      if(!root) return;
+
+      const feedback = document.getElementById("p1Feedback");
+      const btnSubmit = document.getElementById("p1Submit");
+      const btnShow = document.getElementById("p1Show");
+      const btnReset = document.getElementById("p1Reset");
+      const inputs = Array.from(root.querySelectorAll(".gap-input[data-gap]"));
+
+      function showFeedback(html, ok=false){
+        feedback.hidden = false;
+        feedback.className = "feedback " + (ok ? "ok" : "err");
+        feedback.innerHTML = html;
+      }
+
+      btnSubmit.addEventListener("click", ()=>{
+        let correct = 0;
+        const total = Object.keys(PRACTICE1_KEY).length;
+
+        for(const input of inputs){
+          const gid = input.dataset.gap;
+          const accepted = PRACTICE1_KEY[gid];
+          const userVal = input.value;
+
+          if(accepted && isCorrectGap(userVal, accepted)){
+            correct++;
+            setState(input, "ok");
+          }else{
+            setState(input, "err");
+          }
+        }
+
+        const pct = Math.round((correct/total)*100);
+        const perfect = correct === total;
+
+        showFeedback(
+          `<div class="feedback-title">${perfect ? "Perfect" : "Score"}</div>
+           <div class="small">You got <strong>${correct} / ${total}</strong> correct (${pct}%).</div>
+           ${perfect ? `<div class="small">Nice — that’s the right collocation set.</div>`
+                     : `<div class="small">Click “Check Answers” to see the correct forms.</div>`}`,
+          perfect
+        );
+      });
+
+      btnShow.addEventListener("click", ()=>{
+        for(const input of inputs){
+          const gid = input.dataset.gap;
+          const accepted = PRACTICE1_KEY[gid];
+          input.value = Array.isArray(accepted) ? accepted[0] : accepted;
+          setState(input, null);
+        }
+        showFeedback(
+          `<div class="feedback-title">Answers shown</div>
+           <div class="small">Now hit Reset and try again from memory.</div>`,
+          true
+        );
+      });
+
+      btnReset.addEventListener("click", ()=>{
+        for(const input of inputs){
+          input.value = "";
+          setState(input, null);
+        }
+        feedback.hidden = true;
+      });
+    })();
+  </script>
+
+</body>
+</html>
